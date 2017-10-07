@@ -4,7 +4,7 @@ import Dialog from 'react-toolbox/lib/dialog';
 import shortid from 'shortid';
 import Painting from './Painting';
 
-class PaintingList extends React.Component {
+export default class PaintingList extends React.Component {
   static propTypes = {
     paintings: PropTypes.array.isRequired
   };
@@ -47,5 +47,3 @@ class PaintingList extends React.Component {
     this.setState(() => ({ isDialogOpen: !this.state.isDialogOpen }));
   }
 }
-
-export default PaintingList;

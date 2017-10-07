@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Card, CardMedia, CardTitle, CardText, CardActions } from 'react-toolbox/lib/card';
 import { Button } from 'react-toolbox/lib/button';
@@ -14,7 +15,9 @@ function Painting({ handleDialog, title, url }) {
                 title={title}
             />
             <CardActions>
-                <Button label="Détails" />
+                <Link to={"/paintings/123"}>
+                    <Button label="Détails" />
+                </Link>
                 <Button label="Acheter" raised primary onClick={() => handleDialog()} />
             </CardActions>
         </Card>

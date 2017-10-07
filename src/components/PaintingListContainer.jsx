@@ -1,8 +1,10 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 import 'whatwg-fetch';
 import PaintingList from './PaintingList';
+import PaintingDetail from './PaintingDetail';
 
-class PaintingListContainer extends React.Component {
+export default class PaintingListContainer extends React.Component {
   state = { paintings: [] }
 
   constructor(props) {
@@ -16,10 +18,12 @@ class PaintingListContainer extends React.Component {
   }
 
   render() {
+    console.log(`${this.props.match.url}/:id`)
     return (
-      <PaintingList paintings={this.state.paintings} />
+      <div>
+        <Route path={`${this.props.match.url}/123`} component={PaintingDetail} />
+        <PaintingList paintings={this.state.paintings} />
+      </div>
     )
   }
 }
-
-export default PaintingListContainer;
