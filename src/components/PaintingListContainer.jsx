@@ -1,4 +1,5 @@
 import React from 'react';
+import 'whatwg-fetch';
 import PaintingList from './PaintingList';
 
 class PaintingListContainer extends React.Component {
@@ -9,17 +10,9 @@ class PaintingListContainer extends React.Component {
   }
 
   componentDidMount() {
-    const paintings = [
-      {
-        title: 'My first painting',
-        url: 'https://placeimg.com/800/450/nature'
-      },
-      {
-        title: 'My second painting',
-        url: 'https://placeimg.com/800/450/nature'
-      }
-    ];
-    this.setState({ paintings });
+    fetch('mocks/paintings.json')
+      .then(res => res.json())
+      .then(paintings => this.setState({ paintings }));
   }
 
   render() {

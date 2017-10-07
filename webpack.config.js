@@ -1,3 +1,6 @@
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+var path = require('path');
+
 module.exports = {
     entry: [
         'webpack-dev-server/client?http://localhost:8080',
@@ -39,5 +42,15 @@ module.exports = {
     devServer: {
         contentBase: './dist',
         hot: true
-    }
+    },
+    plugins: [
+        new CopyWebpackPlugin([{
+                from: 'src/**/mocks/*.json',
+                to: './mocks',
+                flatten: true
+            }
+        ], {
+            copyUnmodified: true
+        })
+    ]
 };
