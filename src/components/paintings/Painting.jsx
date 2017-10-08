@@ -1,25 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Card, CardMedia, CardTitle, CardText, CardActions } from 'react-toolbox/lib/card';
-import { Button } from 'react-toolbox/lib/button';
+import { Button, Card, Icon, Image } from 'semantic-ui-react'
 
 function Painting({ handleDialog, id, title, url }) {
     return (
-        <Card style={{ width: '350px' }}>
-            <CardMedia
-                aspectRatio="wide"
-                image={url}
-            />
-            <CardTitle
-                title={title}
-            />
-            <CardActions>
-                <Link to={`/peintures/${id}`}>
-                    <Button label="Détails" />
-                </Link>
-                <Button label="Acheter" raised primary onClick={() => handleDialog()} />
-            </CardActions>
+        <Card fluid>
+            <Image src={url} />
+            <Card.Content>
+                <Card.Header>{title}</Card.Header>
+                <Card.Meta>
+                    <span className='date'>Peinte en 2015</span>
+                </Card.Meta>
+            </Card.Content>
+            <Card.Content extra>
+                <Button color='violet' onClick={() => handleDialog()}>Détails</Button>
+            </Card.Content>
         </Card>
     );
 }

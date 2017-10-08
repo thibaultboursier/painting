@@ -11,7 +11,7 @@ export default class PaintingListContainer extends React.Component {
   }
 
   componentDidMount() {
-    fetch('mocks/paintings.json')
+    fetch('/mocks/paintings.json')
       .then(res => res.json())
       .then(paintings => this.setState({ paintings }));
   }

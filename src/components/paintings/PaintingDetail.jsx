@@ -1,7 +1,8 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 
-export default function PaintingDetail() {
+export default function PaintingDetail({title}) {
     return (
-        <div>Painting detail</div>
+        <h1>{title}</h1>
     )
 }
