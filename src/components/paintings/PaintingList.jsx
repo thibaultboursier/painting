@@ -18,6 +18,12 @@ export default class PaintingList extends React.Component {
 
   render() {
     const {paintings} = this.props;
+    let actions = [{
+      icon: "X",
+      className: "snm-close-dialog",
+      onClick: () => this.handleDialog(),
+      neutral: false
+   }];
 
     return (
       <div>
@@ -31,7 +37,7 @@ export default class PaintingList extends React.Component {
           })
         }
         <Dialog
-          actions={this.actions}
+          actions={actions}
           active={this.state.isDialogOpen}
           onEscKeyDown={this.handleDialog}
           onOverlayClick={this.handleDialog}

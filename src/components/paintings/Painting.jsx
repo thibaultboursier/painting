@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Card, CardMedia, CardTitle, CardText, CardActions } from 'react-toolbox/lib/card';
 import { Button } from 'react-toolbox/lib/button';
 
-function Painting({ handleDialog, title, url }) {
+function Painting({ handleDialog, id, title, url }) {
     return (
         <Card style={{ width: '350px' }}>
             <CardMedia
@@ -15,7 +15,7 @@ function Painting({ handleDialog, title, url }) {
                 title={title}
             />
             <CardActions>
-                <Link to={"/paintings/123"}>
+                <Link to={`/peintures/${id}`}>
                     <Button label="Détails" />
                 </Link>
                 <Button label="Acheter" raised primary onClick={() => handleDialog()} />
