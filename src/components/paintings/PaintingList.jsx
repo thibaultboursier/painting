@@ -21,7 +21,7 @@ export default class PaintingList extends React.Component {
 
     return (
       <div>
-        <Grid>
+        <Grid columns={true}>
           {
             paintings.map(painting => {
               return (

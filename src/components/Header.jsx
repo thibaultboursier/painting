@@ -6,8 +6,8 @@ export default function Header() {
     const activeItem = 'home';
 
     return (
-        <Segment inverted>
-            <Menu inverted pointing secondary>
+        <Segment>
+            <Menu>
                 <Menu.Item name='home' active={activeItem === 'home'}>
                     <Link to='/'>Home</Link>
                 </Menu.Item>
